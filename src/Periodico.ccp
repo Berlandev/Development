@@ -1,16 +1,7 @@
-/*********
-  Rui Santos
-  Complete project details at https://RandomNerdTutorials.com/esp32-vs-code-platformio-spiffs/  
-*********/
-
 #include <Arduino.h>
-#include "SPIFFS.h"
-#include "Periodico.ccp"
- 
-void setup() {
-  Serial.begin(9600);
-  
-  if(!SPIFFS.begin(true)){
+
+void repetition() {
+    if(!SPIFFS.begin(true)){
     Serial.println("An Error has occurred while mounting SPIFFS");
     return;
   }
@@ -26,9 +17,5 @@ void setup() {
     Serial.write(file.read());
   }
   file.close();
-}
- 
-void loop() {
-  repetition();
-  delay(1000);
+
 }
